@@ -24,6 +24,7 @@
             flex: 1;
             padding: 10px;
             min-width: 300px; /* Minimum width to handle small screens */
+            border: 1px solid #ccc; /* Add border for debugging */
         }
         .column-right {
             margin-left: 20px;
@@ -31,6 +32,7 @@
         .graph {
             width: 100%; /* Ensures the graph takes up the entire column */
             height: 500px; /* Fixed height to maintain aspect ratio */
+            border: 1px solid red; /* Add border for debugging */
         }
     </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
@@ -67,19 +69,19 @@
     <script>
         // Embed the Australian Map Graph
         vegaEmbed('#graph1', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/australianMap.json', {
-            width: 'container',
+            width: 800, // Set a specific width
             height: 500
         }).catch(console.error);
 
         // Embed the Line Chart Graph
         vegaEmbed('#graph2', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/lineChart.json', {
-            width: 'container',
+            width: 800, // Set a specific width
             height: 500
         }).catch(console.error);
 
         // Embed the Pie Chart Graph
         vegaEmbed('#graph3', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/PieChart.json', {
-            width: 'container',
+            width: 800, // Set a specific width
             height: 500
         }).catch(console.error);
     </script>
