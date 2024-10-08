@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f7e7ce; /* Warmer beige color */
+            background-color: #f5e6b8; /* Slightly more yellowish beige color */
         }
         .header-text {
             text-align: center;
@@ -17,19 +17,20 @@
         .row {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap; /* Allows columns to stack on smaller screens */
             margin-bottom: 20px;
         }
         .column {
             flex: 1;
             padding: 10px;
+            min-width: 300px; /* Minimum width to handle small screens */
         }
         .column-right {
             margin-left: 20px;
         }
         .graph {
-            width: 100%;
-            height: auto;
-            min-height: 400px; /* Minimum height to ensure readability */
+            width: 100%; /* Ensures the graph takes up the entire column */
+            height: 500px; /* Fixed height to maintain aspect ratio */
         }
     </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
@@ -65,13 +66,22 @@
 
     <script>
         // Embed the Australian Map Graph
-        vegaEmbed('#graph1', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/australianMap.json').catch(console.error);
+        vegaEmbed('#graph1', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/australianMap.json', {
+            width: 'container',
+            height: 500
+        }).catch(console.error);
 
         // Embed the Line Chart Graph
-        vegaEmbed('#graph2', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/lineChart.json').catch(console.error);
+        vegaEmbed('#graph2', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/lineChart.json', {
+            width: 'container',
+            height: 500
+        }).catch(console.error);
 
         // Embed the Pie Chart Graph
-        vegaEmbed('#graph3', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/PieChart.json').catch(console.error);
+        vegaEmbed('#graph3', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/PieChart.json', {
+            width: 'container',
+            height: 500
+        }).catch(console.error);
     </script>
 
 </body>
