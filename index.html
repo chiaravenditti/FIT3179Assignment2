@@ -21,18 +21,21 @@
             margin-bottom: 20px;
         }
         .column {
-            flex: 1;
             padding: 10px;
             min-width: 300px; /* Minimum width to handle small screens */
             border: 1px solid #ccc; /* Add border for debugging */
         }
+        .column-left {
+            flex: 2; /* First column is twice as wide */
+        }
         .column-right {
+            flex: 1; /* Second column is half the width of the first */
             margin-left: 20px;
         }
         .graph {
             width: 100%; /* Ensures the graph takes up the entire column */
             height: 500px; /* Fixed height to maintain aspect ratio */
-            border: 1px solid red; /* Add border for debugging */
+            border: none; /* Remove border around graphs */
         }
     </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
@@ -43,8 +46,8 @@
 <body>
 
     <div class="header-text">
-        <h1>Melanoma Skin Cancer in Australia </h1>
-        <p> Australia ranks among the countries with the highest rates of skin cancer globally, reflecting the impact of its sunny climate and outdoor lifestyle. 
+        <h1>Melanoma Skin Cancer in Australia</h1>
+        <p>Australia ranks among the countries with the highest rates of skin cancer globally, reflecting the impact of its sunny climate and outdoor lifestyle. 
             While melanoma constitutes only 1-2% of all skin cancers, it stands out as the most dangerous type due to its aggressive nature and the potential for rapid metastasis to other parts of the body. 
             This visualization delves into comprehensive data on melanoma cases in Australia, aiming to raise awareness about its prevalence and the serious health risks it poses. 
             Through our analysis, we reveal that males are at a higher risk of developing melanoma compared to females, and we observe a concerning upward trend in the number of cases reported in recent years. 
@@ -52,8 +55,8 @@
     </div>
 
     <div class="row">
-        <div class="column">
-            <div class="graph" id="graph1"></div>
+        <div class="column column-left">
+            <div id="graph1" class="graph"></div>
         </div>
         <div class="column column-right">
             <h2>Analysis of Graph 1</h2>
@@ -66,11 +69,11 @@
     </div>
 
     <div class="row">
-        <div class="column">
-            <div class="graph" id="graph2"></div>
+        <div class="column column-left">
+            <div id="graph2" class="graph"></div>
         </div>
         <div class="column column-right">
-            <div class="graph" id="graph3"></div>
+            <div id="graph3" class="graph"></div>
         </div>
     </div>
 
@@ -96,3 +99,4 @@
 
 </body>
 </html>
+
