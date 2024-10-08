@@ -8,37 +8,40 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f5e6b8; 
+            background-color: #f5e6b8; /* Slightly more yellowish beige color */
         }
         .header-text {
             text-align: center;
             margin-bottom: 20px;
         }
         .title {
-            color: blue; 
+            color: blue; /* Set title color to blue */
         }
         .row {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap; 
+            flex-wrap: wrap; /* Allows columns to stack on smaller screens */
             margin-bottom: 20px;
         }
         .column {
             padding: 10px;
-            min-width: 300px;
-            border: 1px solid #ccc; 
+            min-width: 300px; /* Minimum width to handle small screens */
+            border: 1px solid #ccc; /* Add border for debugging */
         }
         .column-left {
-            flex: 2;
+            flex: 2; /* First column is twice as wide */
         }
         .column-right {
-            flex: 1; 
+            flex: 1; /* Second column is half the width of the first */
             margin-left: 20px;
         }
         .graph {
-            width: 100%; 
-            height: 500px; 
-            border: none; 
+            width: 100%; /* Ensures the graph takes up the entire column */
+            height: 500px; /* Fixed height to maintain aspect ratio */
+            border: none; /* Remove border around graphs */
+        }
+        .equal-column {
+            flex: 1; /* Both columns will take equal space */
         }
     </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
@@ -72,10 +75,10 @@
     </div>
 
     <div class="row">
-        <div class="column column-left">
+        <div class="column equal-column">
             <div id="graph2" class="graph"></div>
         </div>
-        <div class="column column-right">
+        <div class="column equal-column">
             <div id="graph3" class="graph"></div>
         </div>
     </div>
