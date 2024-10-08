@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f0e4c9; 
+            background-color: #f0e4c9; /* Slightly darker beige color */
         }
         .header-text {
             text-align: center;
@@ -43,6 +44,7 @@
         }
         .equal-column {
             flex: 1; /* Both columns will take equal space */
+            padding: 0 10px; /* Add padding for spacing */
         }
     </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
@@ -96,13 +98,13 @@
 
         // Embed the Line Chart Graph
         vegaEmbed('#graph2', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/lineChart.json', {
-            width: 200, 
+            width: 400, 
             height: 400
         }).catch(console.error);
 
         // Embed the Pie Chart Graph
         vegaEmbed('#graph3', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/PieChart.json', {
-            width: 300, 
+            width: 400, 
             height: 400
         }).catch(console.error);
     </script>
