@@ -1,5 +1,4 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,9 +41,10 @@
             border: none; /* Remove border around graphs */
             margin: 0 auto; /* Center the graph within its column */
         }
-        .equal-column {
-            flex: 1; /* Both columns will take equal space */
-            padding: 0 10px; /* Add padding for spacing */
+        .graph-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Space between the graphs */
         }
     </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
@@ -80,11 +80,11 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="column equal-column">
+    <div class="graph-container">
+        <div class="column">
             <div id="graph2" class="graph"></div>
         </div>
-        <div class="column equal-column">
+        <div class="column">
             <div id="graph3" class="graph"></div>
         </div>
     </div>
@@ -98,14 +98,14 @@
 
         // Embed the Line Chart Graph
         vegaEmbed('#graph2', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/lineChart.json', {
-            width: 200, 
-            height: 400
+            width: 400, 
+            height: 500
         }).catch(console.error);
 
         // Embed the Pie Chart Graph
         vegaEmbed('#graph3', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/PieChart.json', {
             width: 400, 
-            height: 400
+            height: 500
         }).catch(console.error);
     </script>
 
