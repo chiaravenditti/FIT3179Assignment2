@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphs Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5dc; /* Light beige color */
+        }
+        .header-text {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .column {
+            flex: 1;
+            padding: 10px;
+        }
+        .column-right {
+            margin-left: 20px;
+        }
+        .graph {
+            width: 100%;
+            height: 400px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+    </style>
+    <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+
+    <div class="header-text">
+        <h1>Overview of Graph Analysis</h1>
+        <p>This is a brief introduction that spans across both columns. It provides some context about the graphs below and highlights the key information being presented in the analysis.</p>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="graph" id="graph1">
+                <!-- Australian Map Graph -->
+            </div>
+        </div>
+        <div class="column column-right">
+            <h2>Analysis of Graph 1</h2>
+            <p>Here is a detailed explanation of the trends and observations from the first graph. This text provides insight into what the data is showing and discusses its significance in the context of the analysis.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="graph" id="graph2">
+                <!-- Line Chart Graph -->
+            </div>
+        </div>
+        <div class="column column-right">
+            <div class="graph" id="graph3">
+                <!-- Pie Chart Graph -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Embed the Australian Map Graph
+        vegaEmbed('#graph1', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/australianMap.json').catch(console.error);
+
+        // Embed the Line Chart Graph
+        vegaEmbed('#graph2', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/lineChart.json').catch(console.error);
+
+        // Embed the Pie Chart Graph
+        vegaEmbed('#graph3', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/PieChart.json').catch(console.error);
+    </script>
+
+</body>
+</html>
+
