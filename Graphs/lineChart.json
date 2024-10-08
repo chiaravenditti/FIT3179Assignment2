@@ -87,7 +87,7 @@
         "dy": 15 
       },
       "encoding": {
-        "x": {"value": 400},  
+        "x": {"value": 370},  
         "y": {"value": 400}, 
         "text": {"value": "Note that the highest number of deaths (730) is achieved in 2017."}
       }
