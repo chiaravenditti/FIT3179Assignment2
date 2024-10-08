@@ -11,11 +11,18 @@
   "mark": "arc",
   "encoding": {
     "theta": {"field": "percentage", "type": "quantitative"},
-    "color": {"field": "gender", "type": "nominal", "scale": {"range": ["#1f77b4", "#ff7f0e"]}},
+    "color": {
+      "field": "gender",
+      "type": "nominal",
+      "scale": {"range": ["#1f77b4", "#ff7f0e"]},
+      "legend": {
+        "orient": "bottom",
+        "title": "Gender"
+      }
+    },
     "tooltip": [{"field": "gender", "type": "nominal"}, {"field": "percentage", "type": "quantitative"}]
   },
   "config": {
     "background": "#f0e4c9"
   }
 }
-
