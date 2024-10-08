@@ -2,8 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Line Chart of Deaths Over Years",
   "title": "Melanoma Deaths Over Years",
-  "width": 800,
-  "height": 400,
+
   "data": {
     "values": [
       {"Year": 1997, "Number of deaths": 416},
