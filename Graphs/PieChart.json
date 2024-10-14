@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Pie chart of melanoma cases for Males vs Females (2020-2023)",
+  "title": "Distribution of melanoma cases by gender",
+
   "data": {
     "url": "https://raw.githubusercontent.com/chiaravenditti/Week9Studio/refs/heads/main/Melanoma%20data.csv?token=GHSAT0AAAAAACXKO3WYL4CGIMGRNU2W3HU6ZXKE36Q",
     "values": [
@@ -23,6 +25,6 @@
     "tooltip": [{"field": "gender", "type": "nominal"}, {"field": "percentage", "type": "quantitative"}]
   },
   "config": {
-    "background": "#f0e4c9"
+    "background": "#e0f7fa"
   }
 }
