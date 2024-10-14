@@ -57,7 +57,7 @@
       "encoding": {
         "x": {
           "field": "Year",
-          "type": "ordinal",
+          "type": "temporal",
           "title": "Year"
         },
         "y": {
@@ -68,7 +68,7 @@
         "tooltip": [
           {
             "field": "Year",
-            "type": "ordinal",
+            "type": "temporal",
             "title": "Year"
           },
           {
@@ -83,12 +83,14 @@
       "mark": {
         "type": "text",
         "align": "center",
-        "fontSize": 11,
-        "dy": 15 
+        "fontSize": 10,
+        "dy": 15,
+        "fontStyle": "italic",    /* Set font to italic */
+        "fill": "#666666"         /* Set text color to dark gray */
       },
       "encoding": {
-        "x": {"value": 360},  
-        "y": {"value": 400}, 
+        "x": {"value": 360},
+        "y": {"value": 400},
         "text": {"value": "Note that the highest number of deaths (730) is achieved in 2017."}
       }
     }
