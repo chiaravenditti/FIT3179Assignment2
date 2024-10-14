@@ -85,8 +85,8 @@
         "align": "center",
         "fontSize": 10,
         "dy": 15,
-        "fontStyle": "italic",    /* Set font to italic */
-        "fill": "#666666"         /* Set text color to dark gray */
+        "fontStyle": "italic",    
+        "fill": "#666666"       
       },
       "encoding": {
         "x": {"value": 360},
