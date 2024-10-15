@@ -20,39 +20,34 @@
         .row {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
         }
         .column {
             padding: 10px;
-            min-width: 300px; /* Minimum width to handle small screens */
-            border: 1px solid #ccc; /* Optional border for debugging */
+            min-width: 300px; /* Minimum width for responsiveness */
         }
         .column-left {
-            flex: 2; /* First column for map */
+            flex: 2; /* Left column for map */
             margin-right: 20px; /* Space between map and text */
         }
         .column-right {
-            flex: 1; /* Second column for text */
-        }
-        .graph {
-            width: 100%; /* Ensures the graph takes up the entire column */
-            height: 500px; /* Fixed height to maintain aspect ratio */
-            border: none; /* Remove border around graphs */
-            margin: 0 auto; /* Center the graph within its column */
-        }
-        .graph-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px; /* Space between the graphs */
-        }
-        .line-chart-container {
+            flex: 1; /* Right column for charts */
             display: flex;
             flex-direction: column;
-            flex: 2; /* Line chart takes up more space */
+        }
+        .map, .line-chart, .pie-chart {
+            width: 100%; /* Ensure graphs take full width */
+            height: 400px; /* Set a fixed height for graphs */
+            margin-bottom: 20px; /* Space between graphs */
+        }
+        .charts-container {
+            display: flex; /* Flex for line chart and pie chart */
+        }
+        .line-chart-container {
+            flex: 2; /* Line chart takes 2/3 */
+            margin-right: 20px; /* Space between line chart and pie chart */
         }
         .pie-chart-container {
-            flex: 1; /* Pie chart takes up less space */
+            flex: 1; /* Pie chart takes 1/3 */
         }
     </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
@@ -68,45 +63,43 @@
 
     <div class="row">
         <div class="column column-left">
-            <div id="graph1" class="graph"></div>
+            <div id="map" class="map"></div>
+            <div>
+                <h2>Key Observations</h2>
+                <p>1. The melanoma cases have increased in Australia over the years.</p>
+                <p>2. Higher rates are observed in specific states, such as Queensland and Western Australia.</p>
+                <p>3. Public health campaigns may have contributed to increased awareness and early detection.</p>
+            </div>
         </div>
         <div class="column column-right">
-            <h2>Key Observations</h2>
-            <p>Australia ranks among the countries with the highest rates of skin cancer globally, reflecting the impact of its sunny climate and outdoor lifestyle. While melanoma constitutes only 1-2% of all skin cancers, it stands out as the most dangerous type due to its aggressive nature.</p>
-            <p>Recent years show an increasing trend in melanoma cases, especially among males, indicating a need for heightened awareness and preventive measures.</p>
-        </div>
-    </div>
-
-    <div class="line-chart-container">
-        <div id="graph2" class="graph"></div>
-        <h2>Increasing Trend</h2>
-        <p>The line chart indicates a rising trend in melanoma-related deaths over the years, suggesting advancements in medical treatment or increased awareness leading to better preventive practices.</p>
-    </div>
-
-    <div class="graph-container">
-        <div class="pie-chart-container">
-            <h2>Distribution by State</h2>
-            <div id="graph3" class="graph"></div>
+            <div class="charts-container">
+                <div id="lineChart" class="line-chart line-chart-container"></div>
+                <div id="pieChart" class="pie-chart pie-chart-container"></div>
+            </div>
+            <div>
+                <h2>Increasing Trend</h2>
+                <p>The line chart indicates a rising trend in melanoma cases, suggesting the need for continued public health efforts.</p>
+            </div>
         </div>
     </div>
 
     <script>
         // Embed the Australian Map Graph
-        vegaEmbed('#graph1', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/australianMap.json', {
+        vegaEmbed('#map', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/australianMap.json', {
             width: 600,
-            height: 500
+            height: 400
         }).catch(console.error);
 
         // Embed the Line Chart Graph
-        vegaEmbed('#graph2', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/lineChart.json', {
+        vegaEmbed('#lineChart', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/lineChart.json', {
             width: 600, 
-            height: 500
+            height: 400
         }).catch(console.error);
 
         // Embed the Pie Chart Graph
-        vegaEmbed('#graph3', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/PieChart.json', {
+        vegaEmbed('#pieChart', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/PieChart.json', {
             width: 400, 
-            height: 500
+            height: 400
         }).catch(console.error);
     </script>
 
