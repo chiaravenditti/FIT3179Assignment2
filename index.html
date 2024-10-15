@@ -16,7 +16,7 @@
         }
         .title {
             color: #1664c4; 
-             font-size: 48px; 
+            font-size: 48px; 
             font-family: 'Montserrat', sans-serif;
         }
         .row {
@@ -56,6 +56,12 @@
         .text-container {
             padding-left: 20px; /* Add space between text and chart */
         }
+        .state-image {
+            width: 100%; /* Adjust the image width */
+            max-width: 600px; /* Limit the maximum width */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 20px; /* Space above the image */
+        }
     </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -76,7 +82,9 @@
             <p> Australia ranks among the countries with the highest rates of skin cancer globally, reflecting the impact of its sunny climate and outdoor lifestyle. 
             While melanoma constitutes only 1-2% of all skin cancers, it stands out as the most dangerous type due to its aggressive nature and the potential for rapid metastasis to other parts of the body. 
             This visualization delves into comprehensive data on melanoma cases in Australia, aiming to raise awareness about its prevalence and the serious health risks it poses. The map clearly illustrates that Western Australia has the highest incidence of melanoma cases in Australia, followed closely by Queensland, with New South Wales and South Australia following behind. 
-                In contrast, the Northern Territory reports the lowest rate of melanoma, with only 0.6 cases per 100,000 people. </p>
+                In contrast, the Northern Territory reports the lowest rate of melanoma, with only 0.6 cases per 100,000 people.</p>
+            <!-- Add image here -->
+            <img src="https://github.com/chiaravenditti/FIT3179Assignment2/blob/main/Early-stages-of-melanoma.jpg" alt="Melanoma Cases by State" class="state-image">
         </div>
     </div>
 
@@ -86,9 +94,9 @@
                 <div id="graph2" class="graph"></div>
                 <div class="text-container">
                     <h2> Increasing Trend </h2>
-            <p> The line chart indicates a rising trend in melanoma-related deaths over the years, with the exception of the last 2-3 years. 
-                This could suggest advancements in medical treatment or increased awareness, leading to more people using sunscreen and taking precautions to protect themselves.
-            </p>  
+                    <p> The line chart indicates a rising trend in melanoma-related deaths over the years, with the exception of the last 2-3 years. 
+                        This could suggest advancements in medical treatment or increased awareness, leading to more people using sunscreen and taking precautions to protect themselves.
+                    </p>  
                     <h2> Gender Predominance </h2>
                     <p> The pie chart shows that almost 80% of the cases affects males.</p>
                 </div>
