@@ -16,6 +16,8 @@
         }
         .title {
             color: #1664c4; 
+            font-size: 48px; 
+            font-family: 'Montserrat', sans-serif;
         }
         .row {
             display: flex;
@@ -46,11 +48,6 @@
             justify-content: space-between;
             gap: 20px; /* Space between the graphs */
         }
-        .line-chart-container {
-            flex: 2; /* Line chart takes 2/3 */
-            display: flex; /* Flex to align the chart and text */
-            flex-direction: column;
-        }
         .text-container {
             padding-left: 20px; /* Add space between text and chart */
         }
@@ -75,6 +72,9 @@
             While melanoma constitutes only 1-2% of all skin cancers, it stands out as the most dangerous type due to its aggressive nature and the potential for rapid metastasis to other parts of the body. 
             This visualization delves into comprehensive data on melanoma cases in Australia, aiming to raise awareness about its prevalence and the serious health risks it poses. The map clearly illustrates that Western Australia has the highest incidence of melanoma cases in Australia, followed closely by Queensland, with New South Wales and South Australia following behind. 
                 In contrast, the Northern Territory reports the lowest rate of melanoma, with only 0.6 cases per 100,000 people.</p>
+            <!-- Pie chart moved here -->
+            <div id="graph3" class="graph"></div>
+            <p style="text-align: center; margin-top: 10px;">&copy; 2024 Your Name or Organization</p> 
         </div>
     </div>
 
@@ -91,9 +91,6 @@
                     <p> The pie chart shows that almost 80% of the cases affects males.</p>
                 </div>
             </div>
-        </div>
-        <div class="column column-right">
-            <div id="graph3" class="graph"></div>
         </div>
     </div>
 
