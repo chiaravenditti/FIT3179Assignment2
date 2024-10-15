@@ -1,7 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Line Chart of Deaths Over Years",
-  "title": "Melanoma Deaths Over Years",
+  "title": {
+    "text": "Melanoma Deaths Over Years",
+    "fontSize": 22  // Increased the font size for the title
+  },
+  "width": {"step": 30},
   "data": {
     "values": [
       {"Year": 1997, "Number of deaths": 416},
@@ -56,8 +60,9 @@
       "encoding": {
         "x": {
           "field": "Year",
-          "type": "ordinal",
-          "title": "Year"
+          "type": "quantitative",
+          "title": "Year",
+          "scale": {"nice": false}
         },
         "y": {
           "field": "Number of deaths",
@@ -67,7 +72,7 @@
         "tooltip": [
           {
             "field": "Year",
-            "type": "ordinal",
+            "type": "quantitative",
             "title": "Year"
           },
           {
@@ -79,19 +84,42 @@
       }
     },
     {
+      "transform": [
+        {
+          "filter": "datum.Year == 2017 && datum.Year >= yearSelection"
+        }
+      ],
       "mark": {
         "type": "text",
-        "align": "center",
-        "fontSize": 10,
-        "dy": 15,
-        "fontStyle": "italic",
-        "fill": "#666666"
+        "align": "left",
+        "baseline": "middle",
+        "dx": 5,
+        "dy": -5,
+        "fontSize": 11,
+        "color":  "#4a4a4a" 
       },
       "encoding": {
-        "x": {"value": 360},
-        "y": {"value": 400},
-        "text": {"value": "Note that the highest number of deaths (730) is achieved in 2017."}
+        "x": {"field": "Year", "type": "quantitative"},
+        "y": {"field": "Number of deaths", "type": "quantitative"},
+        "text": {"value": "Highest number of deaths (730) in 2017"}
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == 2017 && datum.Year >= yearSelection"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "color": "red",
+        "size": 50
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "quantitative"},
+        "y": {"field": "Number of deaths", "type": "quantitative"}
       }
     }
   ]
 }
+
