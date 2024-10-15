@@ -17,44 +17,31 @@
         .title {
             color: #1664c4; 
         }
-        .row {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
+        
         }
-        .column {
-            padding: 10px;
-            min-width: 300px; /* Minimum width to handle small screens */
-            border: 1px solid #ccc; /* Add border for debugging */
+        .container {
+            display: flex; 
         }
         .column-left {
-            flex: 2; /* First column is twice as wide */
+            flex: 2; 
+            padding: 10px;
+            margin-right: 20px; 
         }
         .column-right {
-            flex: 1; /* Second column is half the width of the first */
-            margin-left: 20px;
-        }
-        .graph {
-            width: 100%; /* Ensures the graph takes up the entire column */
-            height: 100%; /* Increased height for the map */
-            border: none; /* Remove border around graphs */
-            margin: 0 auto; /* Center the graph within its column */
+            flex: 1; 
+            padding: 10px;
         }
         .graph-container {
-            display: flex; /* Flex for line chart and text */
-            justify-content: space-between;
-            gap: 20px; /* Space between the graphs */
-        }
-        .line-chart-container {
-            flex: 2; /* Line chart takes 2/3 */
-            display: flex; /* Flex to align the chart and text */
-            flex-direction: column;
+            border: 1px solid #ccc; 
+            padding: 10px;
+            margin-bottom: 20px; 
         }
         .text-container {
-            padding-left: 20px; /* Add space between text and chart */
+            border: 1px solid #ccc; 
+            padding: 10px;
+            margin-bottom: 20px; 
         }
-    </style>
+   </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -62,45 +49,37 @@
 </head>
 <body>
 
-    <div class="header-text">
+    <div class="container">
+         <div class="header-text">
         <h1><span class="title">Melanoma Skin Cancer</span> in Australia</h1>
     </div>
-
-    <div class="column column-left">
-        <div class="row">
-            <div id="graph1" class="graph"></div>
-        </div>
-         <div class="row">
+        <div class="column-left">
             <div class="graph-container">
+                <div id="graph1" class="graph"></div>
+            </div><div class="graph-container">
                 <div id="graph2" class="graph"></div>
-                <div class="text-container">
-                    <h2> Increasing Trend </h2>
-                    <p> The line chart indicates a rising trend in melanoma-related deaths over the years, with the exception of the last 2-3 years. 
-                        This could suggest advancements in medical treatment or increased awareness, leading to more people using sunscreen and taking precautions to protect themselves.
-                    </p>  
-                    <h2> Gender Predominance </h2>
-                    <p> The pie chart shows that almost 80% of the cases affects males.</p>
-                </div>
-            </div> 
-         </div>  
-    </div>
-    
-<div class="column column-right">
-    <div class="text-container">
-            <p> Australia ranks among the countries with the highest rates of skin cancer globally, reflecting the impact of its sunny climate and outdoor lifestyle. 
+            </div>
+        </div>
+        <div class="column-right">
+            <div class="text-container">
+                
+                <p>Australia ranks among the countries with the highest rates of skin cancer globally, reflecting the impact of its sunny climate and outdoor lifestyle. 
             While melanoma constitutes only 1-2% of all skin cancers, it stands out as the most dangerous type due to its aggressive nature and the potential for rapid metastasis to other parts of the body. 
             This visualization delves into comprehensive data on melanoma cases in Australia, aiming to raise awareness about its prevalence and the serious health risks it poses. The map clearly illustrates that Western Australia has the highest incidence of melanoma cases in Australia, followed closely by Queensland, with New South Wales and South Australia following behind. 
                 In contrast, the Northern Territory reports the lowest rate of melanoma, with only 0.6 cases per 100,000 people.</p>
+            </div>
+            <div class="graph-container">
+               
+                <div id="graph3" class="graph"></div>
+            </div>
+            <div class="text-container">
+                <h5>Copyright</h5>
+                <p>This visualization was created by Chiara Venditti. The data used was from</p>
+            </div>
         </div>
-     <div class="graph-container">
-          <div id="graph3" class="graph"></div>
-     </div>    
-     <div class="text-container">
-         <h6>Copyrights</h6>
-         <p> This visualization was created by Chiara Venditti. The data used was from </p>
     </div>
- </div>
-    <script>
+
+      <script>
         // Embed the Australian Map Graph
         vegaEmbed('#graph1', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/australianMap.json', {
             width: 700,
@@ -122,3 +101,4 @@
 
 </body>
 </html>
+
