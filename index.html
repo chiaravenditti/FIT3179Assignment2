@@ -26,14 +26,14 @@
         .column {
             padding: 10px;
             min-width: 300px; /* Minimum width to handle small screens */
-            border: 1px solid #ccc; /* Add border for debugging */
+            border: 1px solid #ccc; /* Optional border for debugging */
         }
         .column-left {
-            flex: 2; /* First column is twice as wide */
+            flex: 2; /* First column for map */
+            margin-right: 20px; /* Space between map and text */
         }
         .column-right {
-            flex: 1; /* Second column is half the width of the first */
-            margin-left: 20px;
+            flex: 1; /* Second column for text */
         }
         .graph {
             width: 100%; /* Ensures the graph takes up the entire column */
@@ -46,6 +46,14 @@
             justify-content: space-between;
             gap: 20px; /* Space between the graphs */
         }
+        .line-chart-container {
+            display: flex;
+            flex-direction: column;
+            flex: 2; /* Line chart takes up more space */
+        }
+        .pie-chart-container {
+            flex: 1; /* Pie chart takes up less space */
+        }
     </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -56,11 +64,6 @@
 
     <div class="header-text">
         <h1><span class="title">Melanoma Skin Cancer</span> in Australia</h1>
-        <p>Australia ranks among the countries with the highest rates of skin cancer globally, reflecting the impact of its sunny climate and outdoor lifestyle. 
-            While melanoma constitutes only 1-2% of all skin cancers, it stands out as the most dangerous type due to its aggressive nature and the potential for rapid metastasis to other parts of the body. 
-            This visualization delves into comprehensive data on melanoma cases in Australia, aiming to raise awareness about its prevalence and the serious health risks it poses. 
-            Through our analysis, we reveal that males are at a higher risk of developing melanoma compared to females, and we observe a concerning upward trend in the number of cases reported in recent years. 
-            By shedding light on these statistics, we hope to encourage proactive measures for prevention, early detection, and education about the importance of skin protection to combat this growing health issue.</p>
     </div>
 
     <div class="row">
@@ -68,23 +71,21 @@
             <div id="graph1" class="graph"></div>
         </div>
         <div class="column column-right">
-            <p>The map clearly illustrates that Western Australia has the highest incidence of melanoma cases in Australia, followed closely by Queensland, with New South Wales and South Australia following behind. 
-                In contrast, the Northern Territory reports the lowest rate of melanoma, with only 0.6 cases per 100,000 people. Several factors could contribute to this disparity in melanoma rates across states. 
-                For instance, variations in sun exposure due to geographical location may play a significant role, as areas with more intense sunlight can lead to a higher risk of skin damage. 
-                Additionally, differences in population demographics, such as age distribution and outdoor lifestyle habits, might influence melanoma prevalence. 
-                Access to healthcare and early detection resources could also impact the reported cases, as regions with better screening programs may identify more cases.</p>
-            <h2> Increasing Trend </h2>
-            <p> The line chart indicates a rising trend in melanoma-related deaths over the years, with the exception of the last 2-3 years. 
-                This could suggest advancements in medical treatment or increased awareness, leading to more people using sunscreen and taking precautions to protect themselves.
-            </p>  
+            <h2>Key Observations</h2>
+            <p>Australia ranks among the countries with the highest rates of skin cancer globally, reflecting the impact of its sunny climate and outdoor lifestyle. While melanoma constitutes only 1-2% of all skin cancers, it stands out as the most dangerous type due to its aggressive nature.</p>
+            <p>Recent years show an increasing trend in melanoma cases, especially among males, indicating a need for heightened awareness and preventive measures.</p>
         </div>
     </div>
 
+    <div class="line-chart-container">
+        <div id="graph2" class="graph"></div>
+        <h2>Increasing Trend</h2>
+        <p>The line chart indicates a rising trend in melanoma-related deaths over the years, suggesting advancements in medical treatment or increased awareness leading to better preventive practices.</p>
+    </div>
+
     <div class="graph-container">
-        <div class="column">
-            <div id="graph2" class="graph"></div>
-        </div>
-        <div class="column">
+        <div class="pie-chart-container">
+            <h2>Distribution by State</h2>
             <div id="graph3" class="graph"></div>
         </div>
     </div>
@@ -98,7 +99,7 @@
 
         // Embed the Line Chart Graph
         vegaEmbed('#graph2', 'https://raw.githubusercontent.com/chiaravenditti/FIT3179Assignment2/refs/heads/main/Graphs/lineChart.json', {
-            width: 400, 
+            width: 600, 
             height: 500
         }).catch(console.error);
 
