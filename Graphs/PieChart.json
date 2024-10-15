@@ -5,28 +5,55 @@
     "text": "Distribution of melanoma cases by gender",
     "fontSize": 22  
   },
-    "background": " #e0f7fa",
+  "background": "#e0f7fa",
   "data": {
-    "url": "https://raw.githubusercontent.com/chiaravenditti/Week9Studio/refs/heads/main/Melanoma%20data.csv?token=GHSAT0AAAAAACXKO3WYL4CGIMGRNU2W3HU6ZXKE36Q",
     "values": [
       {"gender": "Males", "percentage": 78.91},
       {"gender": "Females", "percentage": 21.09}
     ]
   },
-  "mark": "arc",
-  "encoding": {
-    "theta": {"field": "percentage", "type": "quantitative"},
-    "color": {
-      "field": "gender",
-      "type": "nominal",
-      "scale": {"range": ["#1f77b4", "#ff7f0e"]},
-      "legend": {
-        "orient": "bottom",
-        "title": "Gender"
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "outerRadius": 80 
+      },
+      "encoding": {
+        "theta": {"field": "percentage", "type": "quantitative"},
+        "color": {
+          "field": "gender",
+          "type": "nominal",
+          "scale": {
+            "range": ["#1f77b4", "#ff7f0e"]
+          },
+          "legend": null 
+        },
+        "tooltip": [
+          {"field": "gender", "type": "nominal"},
+          {"field": "percentage", "type": "quantitative"}
+        ]
       }
     },
-    "tooltip": [{"field": "gender", "type": "nominal"}, {"field": "percentage", "type": "quantitative"}]
-  },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 14,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "gender" 
+        },
+        "color": {
+          "field": "gender", 
+          "type": "nominal",
+          "scale": {"range": ["#1f77b4", "#ff7f0e"]}
+        },
+        "radius": {"value": 110}, 
+        "theta": {"field": "percentage", "type": "quantitative"}
+      }
+    }
+  ],
   "config": {
     "background": "#e0f7fa"
   }
