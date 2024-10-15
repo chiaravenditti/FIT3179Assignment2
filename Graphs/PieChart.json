@@ -16,7 +16,7 @@
     {
       "mark": {
         "type": "arc",
-        "outerRadius": 80 
+        "outerRadius": 100 
       },
       "encoding": {
         "theta": {"field": "percentage", "type": "quantitative"},
@@ -49,7 +49,7 @@
           "type": "nominal",
           "scale": {"range": ["#1f77b4", "#ff7f0e"]}
         },
-        "radius": {"value": 110}, 
+        "radius": {"value": 120}, 
         "theta": {"field": "percentage", "type": "quantitative"}
       }
     }
