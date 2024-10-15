@@ -3,7 +3,7 @@
   "description": "Line Chart of Deaths Over Years",
   "title": {
     "text": "Melanoma Deaths Over Years",
-    "fontSize": 22  // Increased the font size for the title
+    "fontSize": 22  
   },
   "width": {"step": 30},
   "data": {
