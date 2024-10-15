@@ -2,6 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": "Melanoma cases in Australia 2020-2023",
+  "fontSize": 22,  
+    "background": " #e0f7fa",
   "projection": {"type": "equirectangular"},
   "data": {
     "url": "https://raw.githubusercontent.com/chiaravenditti/Homework10/refs/heads/main/State.json",
