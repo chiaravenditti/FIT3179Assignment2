@@ -39,6 +39,10 @@
             padding: 10px;
             margin-bottom: 20px; 
         }
+        .side-by-side {
+            display: flex; /* Flexbox to place items side by side */
+            gap: 20px; /* Space between the chart and text */
+        }
     </style>
     <!-- Vega, Vega-Lite, and Vega-Embed libraries -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -56,8 +60,18 @@
             <div class="graph-container">
                 <div id="graph1" class="graph"></div>
             </div>
-            <div class="graph-container">
-                <div id="graph2" class="graph"></div>
+            <div class="side-by-side"> <!-- New flex container for side by side layout -->
+                <div class="graph-container">
+                    <div id="graph2" class="graph"></div>
+                </div>
+                <div class="text-container">
+                    <h2> Increasing Trend </h2>
+                    <p> The line chart indicates a rising trend in melanoma-related deaths over the years, with the exception of the last 2-3 years. 
+                        This could suggest advancements in medical treatment or increased awareness, leading to more people using sunscreen and taking precautions to protect themselves.
+                    </p>  
+                    <h2> Gender Predominance </h2>
+                    <p> The pie chart shows that almost 80% of the cases affect males.</p>
+                </div>
             </div>
         </div>
         <div class="column-right">
